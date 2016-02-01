@@ -1,0 +1,23 @@
+!!!
+%html
+%head>
+  %title HowMuchYaBench
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+
+%nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      = link_to 'HowMuchYaBench!', root_path, class: 'navbar-brand'
+    #navbar
+      %ul.nav.navbar-nav
+
+.container
+  - flash.each do |key, value|
+    .alert{class: "alert-#{key}"}
+      = value
+
+  = yield

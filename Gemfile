@@ -21,6 +21,9 @@ gem 'normalize-rails'
 gem 'coffee-rails'
 
 gem 'devise' # authentication
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 gem 'figaro' # ENV variable config
 gem 'cancancan', '~> 1.10' # authorization
 gem 'sassc-rails' # faster SASS compilation
