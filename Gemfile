@@ -40,6 +40,7 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'rspec-rails', '~> 3.0'
+  gem 'pry-rails'
 end
 
 group :production do
