@@ -262,4 +262,5 @@ Devise.setup do |config|
 
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
   config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  config.omniauth :instagram, ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_SECRET']
 end
