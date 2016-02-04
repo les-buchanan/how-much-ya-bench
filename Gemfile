@@ -24,7 +24,7 @@ gem 'cancancan', '~> 1.10' # authorization
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'sassc-rails' # faster SASS compilation
+gem 'sassc-rails', '>=1.2.0' # faster SASS compilation
 gem 'twitter-bootstrap-rails', '>=3.2'
 gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
