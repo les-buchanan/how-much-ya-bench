@@ -1,7 +1,7 @@
 @import "boilerplate";
 
 // Core VIBE styling - includes nav and forms
-@import "core/1-unsorted";
+@import "core/**/*";
 
 // 3rd-party styles
 @import "vendor";
