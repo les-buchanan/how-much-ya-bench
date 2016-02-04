@@ -14,13 +14,13 @@ gem 'puma'
 gem 'haml'
 gem 'simple_form'
 gem 'coffee-rails'
-
 gem 'devise' # authentication
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'figaro' # ENV variable config
 gem 'cancancan', '~> 1.10' # authorization
+gem 'high_voltage'
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'

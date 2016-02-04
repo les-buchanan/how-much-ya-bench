@@ -106,6 +106,7 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.3)
+    high_voltage (2.4.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.4.0)
@@ -309,6 +310,7 @@ DEPENDENCIES
   font-awesome-rails
   guard-livereload
   haml
+  high_voltage
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook

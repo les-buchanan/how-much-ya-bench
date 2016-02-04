@@ -25,7 +25,7 @@
             .profile-image= image_tag current_user.image
           %li
             = link_to('Logout', destroy_user_session_path, :method => :delete)
-        - elsif devise_mapping.omniauthable? && resource_class.omniauth_providers.count > 0
+        - elsif ((defined? devise_mapping) && devise_mapping.omniauthable?) && ((defined? resource_class) && resource_class.omniauth_providers.count > 0)
           #sign-in-with
             = t('.sign_in_with', default: 'Sign In With')
             &nbsp;
@@ -43,3 +43,6 @@
       - type = f[0].gsub('alert', 'error').gsub('notice', 'info')
       :javascript
         toastr['#{type}']('#{f[1]}');
+
+  %footer
+    = link_to t(".privacy-policy", default: "Privacy Policy"), page_path("privacy-policy")
