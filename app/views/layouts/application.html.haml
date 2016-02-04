@@ -31,7 +31,9 @@
             &nbsp;
             - social_icons = {facebook: "facebook-official", twitter: "twitter-square" }
             - resource_class.omniauth_providers.each do |provider|
-              - provider_icon = fa_icon(social_icons[provider])
+              - provider_icon = fa_icon(provider.to_s)
+              - provider_icon = fa_icon(social_icons[provider]) if social_icons[provider]
+              
               = link_to provider_icon, omniauth_authorize_path(resource_name, provider), title: t('.sign_in_with_provider', :provider => provider.to_s.titleize, :default => "#{provider.to_s.titleize}")
               &nbsp;
 
