@@ -71,6 +71,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.7)
     diff-lcs (1.2.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -134,7 +135,6 @@ GEM
     nenv (0.2.0)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
-    normalize-rails (3.0.3)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -306,6 +306,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   coffee-rails
   devise
+  devise-bootstrap-views
   ffaker
   figaro
   font-awesome-rails
@@ -313,7 +314,6 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
-  normalize-rails
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter

@@ -13,11 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # my gems
 gem 'puma'
 gem 'haml'
-gem 'bootstrap-sass', '~> 3.3.5'
-gem 'twitter-bootstrap-rails', '>=3.2'
-gem 'font-awesome-rails'
 gem 'simple_form'
-gem 'normalize-rails'
 gem 'coffee-rails'
 
 gem 'devise' # authentication
@@ -26,8 +22,13 @@ gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'figaro' # ENV variable config
 gem 'cancancan', '~> 1.10' # authorization
-gem 'sassc-rails' # faster SASS compilation
 
+# UI
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sassc-rails' # faster SASS compilation
+gem 'twitter-bootstrap-rails', '>=3.2'
+gem 'font-awesome-rails'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'ffaker'
