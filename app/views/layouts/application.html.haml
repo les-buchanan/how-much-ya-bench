@@ -11,9 +11,20 @@
 %nav.navbar.navbar-inverse
   .container
     .navbar-header
+      %button.navbar-toggle.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "nav .navbar-collapse", "aria-expanded" => false}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
       = link_to 'HowMuchYaBench!', root_path, class: 'navbar-brand'
-    #navbar
-      %ul.nav.navbar-nav
+
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav.pull-right
+        - if current_user
+          %li
+            .profile-image= image_tag current_user.image
+          %li
+            = link_to('Logout', destroy_user_session_path, :method => :delete)
 
 .container
   - flash.each do |key, value|
