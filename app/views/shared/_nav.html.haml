@@ -12,9 +12,15 @@
       %ul.nav.navbar-nav.pull-right
         - if current_user
           %li
-            .profile-image= image_tag current_user.image
-          %li
-            = link_to('Logout', destroy_user_session_path, :method => :delete)
+            .dropdown
+              .dropdown-toggle{type: "button", "data-toggle" => "dropdown"}
+                .profile-image
+                  = image_tag current_user.image
+                  %span.caret
+              %ul.dropdown-menu.dropdown-menu-right
+                %li= link_to "Profile", "#"
+                %li= link_to('Logout', destroy_user_session_path, :method => :delete)
+
         - elsif ((defined? devise_mapping) && devise_mapping.omniauthable?) && ((defined? resource_class) && resource_class.omniauth_providers.count > 0)
           #sign-in-with
             = t('.sign_in_with', default: 'Sign In With')
