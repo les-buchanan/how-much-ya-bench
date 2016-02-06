@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     Profile.create(user: self)
   end
 
+  def bench
+    (self.profile.bench_current) ? self.profile.bench_current : 0
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

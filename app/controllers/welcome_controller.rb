@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
 
     benchers = User.all_except(current_user).first(10)
     benchers.each do |b|
-      @top_benches << {name: b.name, bench: b.profile.bench_current, location: b.location}
+      @top_benches << {name: b.name, bench: current_user.bench, location: b.location}
     end
 
     # fill in the rest
@@ -13,6 +13,6 @@ class WelcomeController < ApplicationController
       @top_benches << {name: FFaker::Name.name, bench: rand_bench, location: "#{FFaker::AddressUS.city}, #{FFaker::AddressUS.state}"}
     end
 
-    @top_benches << {name: current_user.name, bench: current_user.profile.bench_current, location: current_user.location } if current_user.profile.bench_current
+    @top_benches << {name: current_user.name, bench: current_user.bench, location: current_user.location }
   end
 end
