@@ -7,3 +7,9 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+.table {
+  tr.highlight {
+    background-color: #FFFFA5 !important;
+  }
+}

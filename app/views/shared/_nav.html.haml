@@ -18,7 +18,7 @@
                   = (current_user.image.present?) ? image_tag(current_user.image) : current_user.name
                   %span.caret
               %ul.dropdown-menu.dropdown-menu-right
-                %li= link_to "Profile", "#"
+                %li= link_to "Profile", edit_profile_path(current_user.profile)
                 %li= link_to('Logout', destroy_user_session_path, :method => :delete)
 
         - elsif ((defined? devise_mapping) && devise_mapping.omniauthable?) && ((defined? resource_class) && resource_class.omniauth_providers.count > 0)

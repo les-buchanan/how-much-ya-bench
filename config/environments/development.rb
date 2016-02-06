@@ -40,4 +40,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.sass.inline_source_maps = true
+  
+  BetterErrors.editor = :sublime
 end

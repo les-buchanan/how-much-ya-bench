@@ -5,14 +5,13 @@ gem 'rails', '4.2.1'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # my gems
 gem 'puma'
 gem 'haml'
-gem 'simple_form'
 gem 'coffee-rails'
 gem 'devise' # authentication
 gem 'omniauth-twitter'
@@ -22,6 +21,8 @@ gem "omniauth-google-oauth2"
 gem 'figaro' # ENV variable config
 gem 'cancancan', '~> 1.10' # authorization
 gem 'high_voltage'
+gem 'simple_form'
+gem 'country_select'
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -31,8 +32,10 @@ gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
 gem 'toastr-rails'
 
+# mock up
+gem 'ffaker', '>=2.2.0'
+
 group :development, :test do
-  gem 'ffaker'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

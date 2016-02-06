@@ -1,0 +1,29 @@
+= simple_form_for @profile, remote: true do |f|
+  - if @profile.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@profile.errors.count, "error")
+        prohibited this profile from being saved:
+      %ul
+        - @profile.errors.full_messages.each do |message|
+          %li= message
+  .row
+    .col-md-6
+      = simple_fields_for current_user do |u|
+        = u.input :name
+    .col-md-6
+      = f.input :age, as: :numeric
+    .col-md-6
+      = f.input :weight, as: :numeric, placeholder: "pounds"
+    .col-md-6
+      = f.input :height, as: :numeric, placeholder: "inches"
+    .col-md-6
+      = f.input :bench_current, as: :numeric, label: "Current Bench", placeholder: "pounds"
+    .col-md-6
+      = f.input :bench_goal, as: :numeric, label: "Bench Goal", placeholder: "pounds"
+    .col-md-6
+      = simple_fields_for current_user do |u|
+        = u.input :location
+
+  .actions
+    = f.submit

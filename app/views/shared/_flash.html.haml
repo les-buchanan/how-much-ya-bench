@@ -1,5 +1,5 @@
 - unless flash.empty?
   - flash.each do |f|
     - type = f[0].gsub('alert', 'error').gsub('notice', 'info')
-    :javascript
+    :plain
       toastr['#{type}']('#{f[1]}');
