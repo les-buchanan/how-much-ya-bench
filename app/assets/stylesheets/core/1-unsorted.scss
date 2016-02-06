@@ -8,3 +8,16 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+table.table {
+  td.image {
+    width: 1%;
+
+    img {
+      width: 32px;
+    }
+  }
+  tbody > tr > td {
+    vertical-align: middle;
+  }
+}
