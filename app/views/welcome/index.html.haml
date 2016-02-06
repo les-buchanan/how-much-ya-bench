@@ -1,10 +1,3 @@
-- bench_data = []
-- 10.times do
-  - rand_bench = Random.rand(210..410).round(-2) + ((Random.rand(1..2) == 1) ? 5 : 0)
-  - bench_data << {name: FFaker::Name.name, bench: rand_bench, location: "#{FFaker::AddressUS.city}, #{FFaker::AddressUS.state}"}
-
-- bench_data << {name: current_user.name, bench: current_user.profile.bench_current, location: current_user.location } if current_user.profile.bench_current
-
 %h1
   Welcome back #{current_user.first_name}!
 - unless current_user.profile.bench_current.present?
@@ -20,7 +13,7 @@
       %th Rank
       %th Last Week
   %tbody
-    - bench_data.sort_by{|p|p[:bench]}.reverse.each_with_index do |p, i|
+    - @top_benches.sort_by{|p|p[:bench]}.reverse.each_with_index do |p, i|
       %tr{class: ("highlight" if current_user.name == p[:name])}
         %td= p[:name]
         %td= p[:bench]
