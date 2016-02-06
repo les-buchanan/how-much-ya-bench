@@ -32,6 +32,9 @@ gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
 gem 'toastr-rails'
 
+# domain specific
+gem 'geocoder'
+
 # mock up
 gem 'ffaker', '>=2.2.0'
 
