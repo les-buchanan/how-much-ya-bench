@@ -1,7 +1,7 @@
 %h1
   Welcome back #{current_user.first_name}!
 - unless current_user.profile.bench_current.present?
-  %p (Don't see your name below?  #{link_to "Edit your profile", edit_profile_path(current_user.profile)} to update your current bench press.)
+  %p (Is your name at the bottom of the list?!  #{link_to "Edit your profile", edit_profile_path(current_user.profile)} to update your current bench press.)
 
 %p Here's your current competition.
 %table.table.table-striped

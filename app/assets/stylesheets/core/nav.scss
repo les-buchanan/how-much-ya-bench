@@ -3,10 +3,17 @@ nav {
 }
 
 .profile-image {
+  cursor: pointer;
   margin-top: 15px;
+  
   img {
     border: 1px solid #fff;
     height: 32px;
     margin-top: -5px;
   }
+}
+
+#sign-in-with {
+  color: #fff;
+  margin-top: 15px;
 }
