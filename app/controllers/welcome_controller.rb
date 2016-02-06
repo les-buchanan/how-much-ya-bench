@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
 
     benchers = User.all_except(current_user).first(10)
     benchers.each do |b|
-      @top_benches << {name: b.name, bench: current_user.bench, location: b.location}
+      @top_benches << {name: b.name, bench: b.bench, location: b.location}
     end
 
     # fill in the rest
