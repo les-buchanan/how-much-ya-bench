@@ -15,3 +15,9 @@
 .env
 # Ignore application configuration
 /config/application.yml
+
+# Intellij project files
+*.iml
+.idea
+out
+
