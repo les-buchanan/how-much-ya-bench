@@ -23,6 +23,8 @@ gem 'cancancan', '~> 1.10' # authorization
 gem 'high_voltage'
 gem 'simple_form'
 gem 'country_select'
+gem 'therubyracer'
+gem "paperclip", "~> 4.3"
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -54,4 +56,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-ruby "2.2.0"
+ruby "2.2.1"

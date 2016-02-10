@@ -42,4 +42,6 @@ Rails.application.configure do
   config.sass.inline_source_maps = true
   
   BetterErrors.editor = :sublime
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
