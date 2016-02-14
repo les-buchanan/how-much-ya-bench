@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
 
     benchers = User.all_except(current_user).first(10)
     benchers.each do |b|
-      @top_benches << {image: b.image, name: b.name, bench: b.bench, location: b.location}
+      @top_benches << {image: b.profile.avatar.url(:thumb) || b.image, name: b.name, bench: b.bench, location: b.location}
     end
 
     # fill in the rest
@@ -13,6 +13,6 @@ class WelcomeController < ApplicationController
       @top_benches << {image: nil, name: FFaker::Name.name, bench: rand_bench, location: "#{FFaker::AddressUS.city}, #{FFaker::AddressUS.state}"}
     end
 
-    @top_benches << {image: current_user.image, name: current_user.name, bench: current_user.bench, location: current_user.location }
+    @top_benches << {image: current_user.profile.avatar.url(:thumb) || current_user.image, name: current_user.name, bench: current_user.bench, location: current_user.location }
   end
 end
