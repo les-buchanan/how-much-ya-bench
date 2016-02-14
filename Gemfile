@@ -35,6 +35,10 @@ gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
 gem 'toastr-rails'
 
+# domain specific
+gem 'geocoder'
+gem "koala", "~> 2.2"  # Facebook Open Graph
+
 # mock up
 gem 'ffaker', '>=2.2.0'
 
