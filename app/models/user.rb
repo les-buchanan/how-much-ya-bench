@@ -48,4 +48,5 @@ class User < ActiveRecord::Base
   def self.all_except(user)
     where.not(id: user)
   end
+
 end
