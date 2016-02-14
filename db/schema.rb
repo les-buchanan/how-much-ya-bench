@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20160209033640) do
     t.datetime "updated_at",    null: false
     t.integer  "bench_goal"
     t.integer  "bench_current"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,10 +53,6 @@ ActiveRecord::Schema.define(version: 20160209033640) do
     t.string   "image_url"
     t.string   "url"
     t.string   "image"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

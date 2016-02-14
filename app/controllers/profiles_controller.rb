@@ -75,6 +75,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:age, :weight, :height, :bench_current, :bench_goal)
+      params.require(:profile).permit(:age, :weight, :height, :bench_current, :bench_goal, :avatar)
     end
 end

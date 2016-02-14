@@ -1,4 +1,4 @@
-= simple_form_for @profile, remote: true do |f|
+= simple_form_for @profile, multipart: true, remote: true, authenticity_token: true do |f|
   - if @profile.errors.any?
     #error_explanation
       %h2
@@ -9,8 +9,8 @@
           %li= message
   .row
     .col-md-12
-      -#= f.label :avatar, class: 'col-sm-2 control-label'
-      = f.file_field :avatar
+      = image_tag @profile.avatar.url(:medium)
+      = f.file_field :avatar, as: :file
     .col-md-6
       = simple_fields_for current_user do |u|
         = u.input :name

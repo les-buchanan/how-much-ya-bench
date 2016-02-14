@@ -24,7 +24,8 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'country_select'
 gem 'therubyracer'
-gem "paperclip", "~> 4.3"
+gem 'paperclip', '~> 4.3'
+gem 'remotipart'
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'
