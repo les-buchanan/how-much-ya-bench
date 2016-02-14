@@ -50,6 +50,10 @@ group :development, :test do
   gem 'pry'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
+
+  # The following gems are for debugging support
+  # gem 'ruby-debug-ide'
+  # gem 'debase'
 end
 
 group :production do
