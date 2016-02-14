@@ -4,7 +4,8 @@ class WelcomeController < ApplicationController
 
     benchers = User.all_except(current_user).first(10)
     benchers.each do |b|
-      @top_benches << {image: b.image, name: b.name, bench: b.bench, location: b.location}
+      thumbnail = b.profile.avatar.url(:thumb) || b.image
+      @top_benches << {image: thumbnail, name: b.name, bench: b.bench, location: b.location}
     end
 
     # fill in the rest
