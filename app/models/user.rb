@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
     (self.profile.bench_current) ? self.profile.bench_current : 0
   end
 
+  def profile_image
+    self.image || self.profile.avatar.url(:thumb)
+  end
+
   def self.from_omniauth(auth, ip_address)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
