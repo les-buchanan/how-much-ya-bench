@@ -50,7 +50,8 @@ class User < ActiveRecord::Base
   end
 
   def self.all_except(user)
-    where.not(id: user)
+    joins(:profile).where.not(id: user).order('profiles.bench_current')
+    # where.not(id: user)
   end
 
 end

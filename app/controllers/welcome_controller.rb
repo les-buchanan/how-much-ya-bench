@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @top_benches = []
 
+    # benchers = User.all_except(current_user).order('bench').first(10)
     benchers = User.all_except(current_user).first(10)
     benchers.each do |b|
       @top_benches << {image: b.profile_image, name: b.name, bench: b.bench, location: b.location}
