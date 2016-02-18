@@ -1,7 +1,10 @@
-%h1
-  Welcome back #{current_user.first_name}!
-- unless current_user.profile.bench_current.present?
-  %p (Is your name at the bottom of the list?!  #{link_to "Edit your profile", edit_profile_path(current_user.profile)} to update your current bench press.)
+- if current_user
+  %h1
+    Welcome back #{current_user.first_name}!
+  - unless current_user.profile.bench_current.present?
+    %p (Is your name at the bottom of the list?!  #{link_to "Edit your profile", edit_profile_path(current_user.profile)} to update your current bench press.)
+- else
+  %h1 Welcome back to HowMuchYaBench!
 
 %p Here's your current competition.
 %table.table.table-striped
@@ -15,7 +18,7 @@
       %th Last Week
   %tbody
     - @top_benches.sort_by{|p|p[:bench]}.reverse.each_with_index do |p, i|
-      %tr{class: ("highlight" if current_user.name == p[:name])}
+      %tr{class: ("highlight" if current_user && current_user.name == p[:name])}
         %td.image= image_tag p[:image] if p[:image]
         %td= p[:name]
         %td= p[:bench]
