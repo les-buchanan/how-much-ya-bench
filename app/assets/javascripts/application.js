@@ -14,3 +14,6 @@
 //= require boilerplate
 //= require vendor
 //= require_tree ./modifiers
+//= require jquery
+//= require jquery.jcrop
+//= require papercrop

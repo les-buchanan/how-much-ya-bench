@@ -131,11 +131,11 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.2)
-    libv8 (3.16.14.13)
     koala (2.2.0)
       addressable
       faraday
       multi_json
+    libv8 (3.16.14.13)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -195,6 +195,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    papercrop (0.3.0)
+      jquery-rails
+      paperclip (>= 3.4)
+      rails (>= 3.1)
     pg (0.18.4)
     pry (0.10.2)
       coderay (~> 1.1.0)
@@ -358,6 +362,7 @@ DEPENDENCIES
   omniauth-instagram
   omniauth-twitter
   paperclip (~> 4.3)
+  papercrop
   pg
   pry
   pry-byebug
