@@ -25,6 +25,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'therubyracer'
 gem 'paperclip', '~> 4.3'
+gem 'papercrop'
 gem 'remotipart'
 
 # UI

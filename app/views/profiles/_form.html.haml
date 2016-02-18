@@ -30,6 +30,8 @@
         = image_tag @profile.avatar.url(:small), style: "margin-bottom: 10px;"
         %br
         = f.file_field :avatar, as: :file
+        -#= f.cropbox :avatar, width: 500
+        -#= f.crop_preview :avatar, width: 150
 
   .actions
     = f.submit class: "btn btn-primary"
