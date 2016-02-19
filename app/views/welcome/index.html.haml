@@ -16,7 +16,8 @@
   %tbody
     - @top_benches.sort_by{|p|p[:bench]}.reverse.each_with_index do |p, i|
       %tr{class: ("highlight" if current_user.name == p[:name])}
-        %td.image= image_tag p[:image] if p[:image]
+        %td.image
+          %div= image_tag p[:image] if p[:image]
         %td= p[:name]
         %td= p[:bench]
         %td= p[:location]

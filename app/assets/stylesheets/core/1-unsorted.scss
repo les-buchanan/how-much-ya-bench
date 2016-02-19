@@ -12,9 +12,12 @@ footer {
 table.table {
   td.image {
     width: 1%;
-
-    img {
-      width: 32px;
+    div {
+      border-radius:50%;
+      overflow: hidden;
+      img {
+        width: 32px;
+      }
     }
   }
   tbody > tr > td {
