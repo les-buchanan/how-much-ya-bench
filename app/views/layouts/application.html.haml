@@ -1,20 +1,19 @@
 !!!
 %html
-%head
-  %title HowMuchYaBench
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,300,700,300italic,400italic"
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags
+  %head
+    %title HowMuchYaBench
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:400,300,700,300italic,400italic"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
 
-%body
+  %body
+    = render "shared/nav"
 
-= render "shared/nav"
+    .container
+      = yield
 
-.container
-  = yield
+      = render "shared/footer"
 
-  = render "shared/footer"
-
-:javascript
-  = render "shared/flash"
+    :javascript
+      = render "shared/flash"
