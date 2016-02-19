@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209033640) do
+ActiveRecord::Schema.define(version: 20160218200309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,19 @@ ActiveRecord::Schema.define(version: 20160209033640) do
     t.string   "gender"
     t.string   "location"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "bench_goal"
     t.integer  "bench_current"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  add_index "profiles", ["bench_current"], name: "index_profiles_on_bench_current", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -47,11 +51,11 @@ ActiveRecord::Schema.define(version: 20160209033640) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "location"
     t.string   "image_url"
     t.string   "url"
+    t.string   "uid"
+    t.string   "provider"
     t.string   "image"
   end
 

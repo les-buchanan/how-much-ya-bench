@@ -54,4 +54,5 @@ class User < ActiveRecord::Base
     # where.not(id: user)
   end
 
+  scope :order_by_bench, -> { includes(:profile).order('profiles.bench_current desc') }
 end
