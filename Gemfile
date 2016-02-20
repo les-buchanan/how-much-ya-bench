@@ -17,7 +17,7 @@ gem 'devise' # authentication
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-instagram'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
 gem 'figaro' # ENV variable config
 gem 'cancancan', '~> 1.10' # authorization
 gem 'high_voltage'
@@ -38,7 +38,7 @@ gem 'toastr-rails'
 
 # domain specific
 gem 'geocoder'
-gem "koala", "~> 2.2"  # Facebook Open Graph
+gem 'koala', '~> 2.2'  # Facebook Open Graph
 
 # mock up
 gem 'ffaker', '>=2.2.0'
@@ -66,4 +66,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-ruby "2.2.1"
+ruby '2.2.1'
