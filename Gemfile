@@ -27,7 +27,7 @@ gem 'therubyracer'
 gem 'paperclip', '~> 4.3'
 gem 'papercrop'
 gem 'remotipart'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.5'
