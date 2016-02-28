@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_weight_unit_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Weight unit
+  %h1 Listing weight_units
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @weight_units.each do |weight_unit|
+        %tr
+          %td= weight_unit.name
+          %td= link_to 'Show', weight_unit
+          %td= link_to 'Edit', edit_weight_unit_path(weight_unit)
+          %td= link_to 'Destroy', weight_unit, data: { confirm: 'Are you sure?' }, method: :delete

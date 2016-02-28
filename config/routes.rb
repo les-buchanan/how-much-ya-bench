@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weight_units
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get 'welcome/index'
