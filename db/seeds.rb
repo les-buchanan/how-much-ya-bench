@@ -8,3 +8,5 @@
 
 WeightUnit.create(name: "Pounds")
 WeightUnit.create(name: "Kilograms")
+
+Exercise.create(name: "Bench")
