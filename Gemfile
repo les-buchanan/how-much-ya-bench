@@ -62,6 +62,11 @@ group :development, :test do
   # gem 'debase'
 end
 
+group :development do
+  gem 'bootstrap-generators', '~> 3.3.4'
+  gem 'haml-rails'
+end
+
 group :production do
   gem 'rails_12factor'
 end
