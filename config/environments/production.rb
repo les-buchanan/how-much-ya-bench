@@ -80,7 +80,7 @@ Rails.application.configure do
   # AWS S3 configuration
   config.paperclip_defaults = {
       storage: :s3,
-      s3_host_name: 's3-website-us-west-2.amazonaws.com',
+      url: ':s3_domain_url',
       path: '/:class/:attachment/:id_partition/:style/:filename',
       s3_credentials: {
           bucket: ENV['S3_BUCKET_NAME'],
