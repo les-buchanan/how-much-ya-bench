@@ -10,6 +10,7 @@
 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav.pull-right
+        %li= link_to t('.nav_leaderboard', default: 'Leader Board'), root_path
         - if current_user
           %li
             .dropdown
