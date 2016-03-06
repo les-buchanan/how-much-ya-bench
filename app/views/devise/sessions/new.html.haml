@@ -1,6 +1,18 @@
 .panel.panel-default
   .panel-heading
-    %h4= t('.sign_in', :default => "Sign in")
+    %h4= t('.sign_in_with', default: 'Login with social')
+  .panel-body
+    #sign-in-with
+      - social_icons = {facebook: "facebook-official", twitter: "twitter-square" }
+      - resource_class.omniauth_providers.each do |provider|
+        - provider_icon = fa_icon(provider.to_s)
+        - provider_icon = fa_icon(social_icons[provider]) if social_icons[provider]
+
+        = link_to provider_icon, omniauth_authorize_path(resource_name, provider), title: t('.sign_in_with_provider', :provider => provider.to_s.titleize, :default => "#{provider.to_s.titleize}")
+        &nbsp;
+.panel.panel-default
+  .panel-heading
+    %h4= t('.sign_in_with_bench', default: 'Use Your Bench Account')
   .panel-body
     = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f|
       .form-group
