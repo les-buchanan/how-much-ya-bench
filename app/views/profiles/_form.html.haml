@@ -27,7 +27,10 @@
     .col-md-6
       = f.label :avatar, label: "Profile Image"
       %div
-        = image_tag @profile.avatar.url(:small), style: "margin-bottom: 10px;"
+        - if @profile.avatar.url(:small).to_s != '/images/small/missing.png'.to_s
+          = image_tag @profile.avatar.url(:small), style: "margin-bottom: 10px;"
+        - elsif current_user.image.present?
+          = image_tag current_user.image, style: "margin-bottom: 10px;"
         %br
         = f.file_field :avatar, as: :file
         -#= f.cropbox :avatar, width: 500
