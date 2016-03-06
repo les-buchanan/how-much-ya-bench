@@ -18,17 +18,8 @@
                   = (current_user.image.present?) ? image_tag(current_user.image) : current_user.name
                   %span.caret
               %ul.dropdown-menu.dropdown-menu-right
-                %li= link_to "Profile", edit_profile_path(current_user.profile)
+                %li= link_to 'Profile', edit_profile_path(current_user.profile)
                 %li= link_to('Logout', destroy_user_session_path, :method => :delete)
 
         - elsif ((defined? devise_mapping) && devise_mapping.omniauthable?) && ((defined? resource_class) && resource_class.omniauth_providers.count > 0)
-          #sign-in-with
-            = t('.sign_in_with', default: 'Sign In With')
-            &nbsp;
-            - social_icons = {facebook: "facebook-official", twitter: "twitter-square" }
-            - resource_class.omniauth_providers.each do |provider|
-              - provider_icon = fa_icon(provider.to_s)
-              - provider_icon = fa_icon(social_icons[provider]) if social_icons[provider]
-
-              = link_to provider_icon, omniauth_authorize_path(resource_name, provider), title: t('.sign_in_with_provider', :provider => provider.to_s.titleize, :default => "#{provider.to_s.titleize}")
-              &nbsp;
+          %li= link_to 'Sign in', new_user_session_path
