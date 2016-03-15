@@ -7,6 +7,8 @@ class WelcomeController < ApplicationController
       @top_benches << {image: b.profile_image, name: b.name, bench: b.bench, location: b.location}
     end
 
-    @top_benches << {image: current_user.profile_image, name: current_user.name, bench: current_user.bench, location: current_user.location }
+    if current_user
+      @top_benches << {image: current_user.profile_image, name: current_user.name, bench: current_user.bench, location: current_user.location }
+    end
   end
 end

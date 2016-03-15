@@ -1,7 +1,7 @@
 - if current_user
   %h1
     Welcome back #{current_user.first_name}!
-  - unless current_user.profile.bench_current.present?
+  - unless current_user.profile.bench_current.present? && current_user.profile.bench_current != 0
     %p (Is your name at the bottom of the list?!  #{link_to "Edit your profile", edit_profile_path(current_user.profile)} to update your current bench press.)
 - else
   %h1 Welcome back to HowMuchYaBench!
@@ -22,7 +22,10 @@
         %td.image
           %div= image_tag p[:image] if p[:image]
         %td= p[:name]
-        %td= p[:bench]
-        %td= p[:location]
-        %td= i + 1
-        %td= i + 2
+        - if current_user && current_user.name == p[:name] && p[:bench] == 0
+          %td{colspan:4}= link_to 'Click here to finish your profile!', edit_profile_path(current_user.profile)
+        - else
+          %td= p[:bench]
+          %td= p[:location]
+          %td= i + 1
+          %td= i + 2
