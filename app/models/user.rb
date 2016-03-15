@@ -50,9 +50,15 @@ class User < ActiveRecord::Base
   end
 
   def self.all_except(user)
-    joins(:profile).where.not(id: user).order('profiles.bench_current')
+    joins(:profile).order('profiles.bench_current')
     # where.not(id: user)
   end
 
-  scope :order_by_bench, -> { includes(:profile).order('profiles.bench_current desc') }
+  def self.order_by_bench_except(user)
+    order_by_bench.where.not(id: user)
+  end
+
+  scope :order_by_bench, -> {
+    includes(:profile).where('profiles.bench_current IS NOT NULL').order('profiles.bench_current desc')
+  }
 end
