@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # auto-included by rails new
 gem 'rails', '4.2.11'
-gem 'pg'
+gem 'pg', '~> 0.15'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.0.0.beta'
