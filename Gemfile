@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # auto-included by rails new
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.11'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
