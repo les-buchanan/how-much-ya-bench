@@ -30,7 +30,7 @@ gem 'remotipart'
 gem 'aws-sdk', '< 2.0'
 
 # UI
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>=1.2.0' # faster SASS compilation
 gem 'twitter-bootstrap-rails', '>=3.2'
 gem 'font-awesome-rails'
